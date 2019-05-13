@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Camada deslizantes </title>
+        <link rel="stylesheet" href="./ol/ol.css" type="text/css">
+        <script src="./ol/ol.js"></script>
+        <style>
+            #map    {
+              height: 500px;
+              width: 700px;
+                }
+        </style>
+        
+    </head>
+    <div id="map" class="map"></div>
+    <input id="swipe" type="range" style="width: 700px">
+    <body>
+        <script>
+            var google = new ol.layer.Tile({
+                'title': 'Google Satellite',
+                'type': 'base',
+                'opacity': 1.00000,
+                source: new ol.source.XYZ({
+                    attributions: '<a href="https://www.google.com/intl/pt-BR_br/help/terms_maps/"><p_lucas>BOXGEO</p_lucas></a>',
+                    url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
+                })
+            });
+
+            var lyr_geoconn2_2 = new ol.layer.Tile({   
+                'title': 'geoconn2',
+                'type': 'base',
+                'opacity': 1.000000,
+                source: new ol.source.XYZ({
+                    attributions: '<a href=""></a>',
+                    url: 'https://storage.googleapis.com/land_test/Test_landSAt/{z}/{x}/{y}.jpg'
+                })
+            });
+
+            var lyr_geconn1_1 = new ol.layer.Tile({
+                'title': 'geconn1',
+                'type': 'base',
+                'opacity': 1.000000,
+                source: new ol.source.XYZ({
+                    attributions: '<a href=""></a>',
+                    url: 'https://storage.googleapis.com/wgs_test/Test_wgs_qgis/{z}/{x}/{y}.jpg'
+                })
+            });
+
+            var lyr_geoconn3_3 = new ol.layer.Tile({
+                'title': 'geoconn3',
+                'type': 'base',
+                'opacity': 1.000000,
+                source: new ol.source.XYZ({
+                    attributions: '',
+                    url: 'https://storage.googleapis.com/wgs_test/Test_wgs_qgis2/{z}/{x}/{y}.jpg'
+                })
+            });
+            var lyr_EsriSatellite_1 = new ol.layer.Tile({
+                'title': 'Esri Satellite',
+                'type': 'base',
+                'opacity': 1.000000,
+                source: new ol.source.XYZ({
+                    attributions: '<a href=""></a>',
+                    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+                })
+            });
+
+
+            var map = new ol.Map({
+                layers: [google, lyr_EsriSatellite_1],
+                target: 'map',
+                controls: ol.control.defaults({
+                    attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+                           collapsible: false
+                    })
+                }),
+                view: new ol.View({
+                    center: [-5758082.04,-2024314.37],
+                    zoom: 12
+                })
+            });
+
+            var swipe = document.getElementById('swipe');
+
+            lyr_EsriSatellite_1.on('precompose', function(event) {
+                var ctx = event.context;
+                var width = ctx.canvas.width * (swipe.value / 100);
+                ctx.save();
+                ctx.beginPath();
+                ctx.rect(width, 0, ctx.canvas.width - width, ctx.canvas.height);
+                ctx.clip();
+            });
+
+            lyr_EsriSatellite_1.on('postcompose', function(event) {
+                var ctx = event.context;
+                ctx.restore();
+            });
+
+            swipe.addEventListener('input', function() {
+                map.render();
+            }, true);
+        </script>
+    </body>
+</html>
