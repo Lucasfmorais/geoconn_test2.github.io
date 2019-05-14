@@ -196,8 +196,8 @@ p_lucas { color: :rgb(116, 161, 220);
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  height: 1.375em;
-  width: 1.375em;
+  height: 3vh;
+  width: 3vh;
   line-height: .4em;
   background-color: rgba(139, 182, 114, 0.356);
   border:  rgb(0, 0, 0);
@@ -208,16 +208,16 @@ p_lucas { color: :rgb(116, 161, 220);
 
 }
 .ol-zoom-extent button {
-  line-height: 1.4em;
+  line-height: 3vh;
 }
 .ol-compass {
   display: block;
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 3vh;
   will-change: transform;
 }
 .ol-touch .ol-control button {
-  font-size: 1.5em;
+  font-size: 3vh;
 }
 .ol-touch .ol-zoom-extent {
   top: 5.5em;
@@ -278,13 +278,13 @@ p_lucas { color: :rgb(116, 161, 220);
   bottom: 0;
   right: 0;
   border-radius: 4px 0 0;
-  height: 1.1em;
-  line-height: 1em;
+  height: 3vh;
+  line-height: 3vh;
 }
 .ol-attribution.ol-logo-only {
   background: transparent;
-  bottom: .4em;
-  height: 1.1em;
+  bottom: 3vh;
+  height: 3vh;
   line-height: 1em;
 }
 .ol-attribution.ol-uncollapsible img {
@@ -299,11 +299,11 @@ p_lucas { color: :rgb(116, 161, 220);
 .ol-zoomslider {
   top: 4.5em;
   left: 50em;
-  height: 200px;
+  height: 3vh;
 }
 .ol-zoomslider button {
   position: relative;
-  height: 10px;
+  height: 3vh;
 }
 
 .ol-touch .ol-zoomslider {
@@ -325,9 +325,9 @@ p_lucas { color: :rgb(116, 161, 220);
 }
 .ol-overviewmap .ol-overviewmap-map {
   border: 1px solid #7b98bc;
-  height: 150px;
+  height: 3vh;
   margin: 2px;
-  width: 150px;
+  width: 3vh;
 }
 .ol-overviewmap:not(.ol-collapsed) button{
   bottom: 1px;
