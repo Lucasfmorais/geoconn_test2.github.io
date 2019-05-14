@@ -15,7 +15,7 @@
             width:50%;
             height: 50%;
             position: relative;
-            top:12rem
+            top:30ex
                     }
     </style>
     <div id="map" class="map"></div>
@@ -23,12 +23,14 @@
             
                 <body>
                     <script>
-                        var google = new ol.layer.Tile({
+                           var google = new ol.layer.Tile({
                             'title': 'Google Satellite',
                             'type': 'base',
                             'opacity': 1.00000,
                             source: new ol.source.XYZ({
-                                attributions: '<a href="https://www.google.com/intl/pt-BR_br/help/terms_maps/"><p_lucas>BOXGEO</p_lucas></a>',
+                            attributions:  new ol.Attribution({
+                            html: 'Mapas de base:<a href="https://www.google.com/intl/pt_US/help/terms_maps/">Google</a>&nbsp;e &nbsp;<a href="https://www.esri.com/en-us/legal/terms/services">Esri</a>'
+                            }),
                                 url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
                             })
                         });
@@ -48,7 +50,6 @@
                             'type': 'base',
                             'opacity': 1.000000,
                             source: new ol.source.XYZ({
-                                attributions: '<a href=""></a>',
                                 url: 'https://storage.googleapis.com/wgs_test/Test_wgs_qgis/{z}/{x}/{y}.jpg'
                             })
                         });
@@ -58,7 +59,6 @@
                             'type': 'base',
                             'opacity': 1.000000,
                             source: new ol.source.XYZ({
-                                attributions: '',
                                 url: 'https://storage.googleapis.com/wgs_test/Test_wgs_qgis2/{z}/{x}/{y}.jpg'
                             })
                         });
@@ -67,26 +67,27 @@
                             'type': 'base',
                             'opacity': 1.000000,
                             source: new ol.source.XYZ({
-                                attributions: '<a href=""></a>',
                                 url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
                             })
                         });
 
 
                         var map = new ol.Map({
+
                             layers: [google, lyr_EsriSatellite_1],
                             target: 'map',
+                            
                             controls: ol.control.defaults({
                                 attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
-                                    collapsible: false
+                                    collapsible: true,
                                 })
                             }),
                             view: new ol.View({
                                 center: [-5758082.04,-2024314.37],
-                                zoom: 12
+                                zoom: 15
                             })
                         });
-
+ 
                         var swipe = document.getElementById('swipe');
 
                         lyr_EsriSatellite_1.on('precompose', function(event) {

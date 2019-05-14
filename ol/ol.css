@@ -1,21 +1,21 @@
-p_lucas { color: rgb(51, 106, 153);
-  background:rgba(243, 245, 243, 0.719);
-  font-weight:bold;
+p_lucas { color: :rgb(116, 161, 220);
+  font-weight::-webkit-scrollbar-thumb;
+  font: script;
 }
 
 .slidecontainer {
-  width: 90%; /* Width of the outside container */
+  width: 50%; /* Width of the outside container */
 }
 
 /* The slider itself */
 .slider {
   -webkit-appearance: none;
-  border-radius: 2px;   
+  border-radius: 20px;   
   background: #d3d3d300;
   outline: none;
-  opacity: 0.7;
-  -webkit-transition: .3s;
-  transition: opacity .3s;
+  opacity: 50;
+  -webkit-transition: 0.1s;
+  transition: opacity 0.1s;
   position:absolute; 
   width: 90%;
   height: 90%;
@@ -32,8 +32,8 @@ p_lucas { color: rgb(51, 106, 153);
   appearance: none;
   width: 20px;
   height: 20px;
-  border-radius: 100%; 
-  background: rgb(13, 168, 18);
+  border-radius: 50%; 
+  background: rgb(116, 171, 220);
   cursor:pointer ;
 
 }
@@ -52,15 +52,10 @@ p_lucas { color: rgb(51, 106, 153);
   height: 90%;
 }
 
-
-
-
-
-
 .ol-box {
   box-sizing: border-box;
   border-radius: 2px;
-  border: 2px solid rgb(255, 0, 0);
+  border: 2px solid rgb(97, 58, 58);
 }
 
 .ol-mouse-position {
@@ -157,12 +152,12 @@ p_lucas { color: rgb(51, 106, 153);
 }
 .ol-control {
   position: absolute;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(5, 5, 5, 0.815);
   border-radius: 4px;
   padding: 2px;
 }
 .ol-control:hover {
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(0, 0, 0, 0.842);
 }
 .ol-zoom {
   top: .5em;
@@ -196,7 +191,7 @@ p_lucas { color: rgb(51, 106, 153);
   display: block;
   margin: 1px;
   padding: 0;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.14em;
   font-weight: bold;
   text-decoration: none;
@@ -204,13 +199,13 @@ p_lucas { color: rgb(51, 106, 153);
   height: 1.375em;
   width: 1.375em;
   line-height: .4em;
-  background-color: rgba(233, 183, 18, 0.356);
-  border: none;
+  background-color: rgba(139, 182, 114, 0.356);
+  border:  rgb(0, 0, 0);
   border-radius: 2px;
 }
 .ol-control button::-moz-focus-inner {
-  border: none;
-  padding: 0;
+  border: rgb(0, 0, 0);
+
 }
 .ol-zoom-extent button {
   line-height: 1.4em;
@@ -239,17 +234,18 @@ p_lucas { color: rgb(51, 106, 153);
   border-radius: 0 0 2px 2px;
 }
 
+/* rodapé de atributos do mapa!----------------------------------------------*/
 .ol-attribution {
   text-align: right;
-  bottom: .5em;
-  right: .5em;
-  max-width: calc(100% - 1.3em);
+  bottom: .05em;
+  right: .3em;
+  max-width: calc(90% - 1.3em);
 }
 
 .ol-attribution ul {
   margin: 0;
-  padding: 0 .5em;
-  font-size: .7rem;
+  padding: 0.5em;
+  font-size: .5rem;
   line-height: 1.375em;
   color: #000;
   text-shadow: 0 0 2px #fff;
@@ -265,7 +261,6 @@ p_lucas { color: rgb(51, 106, 153);
 .ol-attribution img {
   max-height: 2em;
   max-width: inherit;
-  vertical-align: middle;
 }
 .ol-attribution ul, .ol-attribution button {
   display: inline-block;
@@ -273,8 +268,11 @@ p_lucas { color: rgb(51, 106, 153);
 .ol-attribution.ol-collapsed ul {
   display: none;
 }
+.ol-attribution.ol-logo-only ul {
+  display: block;
+}
 .ol-attribution:not(.ol-collapsed) {
-  background: rgba(190, 17, 17, 0);
+  background: rgba(255,255,255,0.8);
 }
 .ol-attribution.ol-uncollapsible {
   bottom: 0;
@@ -283,17 +281,24 @@ p_lucas { color: rgb(51, 106, 153);
   height: 1.1em;
   line-height: 1em;
 }
+.ol-attribution.ol-logo-only {
+  background: transparent;
+  bottom: .4em;
+  height: 1.1em;
+  line-height: 1em;
+}
 .ol-attribution.ol-uncollapsible img {
   margin-top: -.2em;
   max-height: 1.6em;
 }
+.ol-attribution.ol-logo-only button,
 .ol-attribution.ol-uncollapsible button {
   display: none;
 }
 
 .ol-zoomslider {
   top: 4.5em;
-  left: .5em;
+  left: 50em;
   height: 200px;
 }
 .ol-zoomslider button {
