@@ -4,16 +4,11 @@
         <title>Camada deslizantes </title>
         <link rel="stylesheet" href="./ol/ol.css" type="text/css">
         <script src="./ol/ol.js"></script>
-        <style>
-            #map    {
-              height: 500px;
-              width: 700px;
-                }
-        </style>
-        
     </head>
+
+    
     <div id="map" class="map"></div>
-    <input id="swipe" type="range" style="width: 700px">
+    <input id="swipe" type="range"  class="slider">
     <body>
         <script>
             var google = new ol.layer.Tile({
@@ -100,5 +95,6 @@
                 map.render();
             }, true);
         </script>
+
     </body>
 </html>

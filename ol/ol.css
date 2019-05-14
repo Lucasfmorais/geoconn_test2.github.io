@@ -3,6 +3,60 @@ p_lucas { color: rgb(51, 106, 153);
   font-weight:bold;
 }
 
+.slidecontainer {
+  width: 90%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  border-radius: 2px;   
+  background: #d3d3d300;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .3s;
+  transition: opacity .3s;
+  position:absolute; 
+  width: 90%;
+  height: 90%;
+}
+
+/* Efeitos de mouse-over */
+.slider:hover {
+  opacity: 1; /* Totalmente mostrado no mouse-over */
+}
+
+/* O controle deslizante (use -webkit- (Chrome, Opera, Safari, Edge) e -moz- (Firefox) para substituir a aparência padrão) */ 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%; 
+  background: rgb(13, 168, 18);
+  cursor:pointer ;
+
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.map{
+  position:absolute; 
+  width: 90%;
+  height: 90%;
+}
+
+
+
+
+
+
 .ol-box {
   box-sizing: border-box;
   border-radius: 2px;
@@ -184,7 +238,6 @@ p_lucas { color: rgb(51, 106, 153);
 .ol-zoom .ol-zoom-out {
   border-radius: 0 0 2px 2px;
 }
-
 
 .ol-attribution {
   text-align: right;
