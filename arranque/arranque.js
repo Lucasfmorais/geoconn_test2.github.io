@@ -8,7 +8,7 @@ var map = new ol.Map({
 		})
 	}),
 	view: new ol.View({
-		center: [-5758082.04,-2024314.37],
+		center: ol.proj.fromLonLat([-51.7257015,-17.8869303]),
 		zoom: 15
 	})
 });
@@ -33,8 +33,9 @@ swipe.addEventListener('input', function() {
 var vector = new ol.layer.Vector({
   source: new ol.source.Vector({
     url: './layers/test2.geojson',
+    style: style_bairrosjti_3,
     format: new ol.format.GeoJSON()
+    
   })
 });
 map.addLayer(vector);
-
