@@ -1,5 +1,5 @@
 var google = new ol.layer.Tile({
-	'title': 'Google Satellite',
+	title: 'Google Satellite',
 	'type': 'base',
 	'opacity': 1.00000,
 	source: new ol.source.XYZ({
@@ -10,7 +10,7 @@ var google = new ol.layer.Tile({
 	})
 });
 var lyr_geoconn2_2 = new ol.layer.Tile({   
-	'title': 'geoconn2',
+	title: 'geoconn2',
 	'type': 'base',
 	'opacity': 1.000000,
 	source: new ol.source.XYZ({
@@ -19,7 +19,7 @@ var lyr_geoconn2_2 = new ol.layer.Tile({
 	})
 });
 var lyr_geconn1_1 = new ol.layer.Tile({
-	'title': 'geconn1',
+	title: 'geconn1',
 	'type': 'base',
 	'opacity': 1.000000,
 	source: new ol.source.XYZ({
@@ -27,7 +27,7 @@ var lyr_geconn1_1 = new ol.layer.Tile({
 	})
 });
 var lyr_geoconn3_3 = new ol.layer.Tile({
-	'title': 'geoconn3',
+	title: 'geoconn3',
 	'type': 'base',
 	'opacity': 1.000000,
 	source: new ol.source.XYZ({
@@ -35,7 +35,7 @@ var lyr_geoconn3_3 = new ol.layer.Tile({
 	})
 });
 var lyr_EsriSatellite_1 = new ol.layer.Tile({
-	'title': 'Esri Satellite',
+	title: 'Esri Satellite',
 	'type': 'base',
 	'opacity': 1.000000,
 	source: new ol.source.XYZ({

@@ -61,6 +61,17 @@ swipe.addEventListener('input', function() {
 	map.render();
 }, true);
 
+var vector = new ol.layer.Vector({
+	source: new ol.source.Vector({
+	  url: './layers/test2.geojson',
+	  style: style_bairrosjti_3,
+	  format: new ol.format.GeoJSON()
+	  
+	})
+  });
+
+map.addLayer(vector);
+
 map.on('singleclick', function(evt) {
 	var coordinate = evt.coordinate;
 	var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
@@ -71,12 +82,4 @@ map.on('singleclick', function(evt) {
 	overlay.setPosition(coordinate);
   });
 
-  var vector = new ol.layer.Vector({
-	source: new ol.source.Vector({
-	  url: './layers/test2.geojson',
-	  style: style_bairrosjti_3,
-	  format: new ol.format.GeoJSON()
-	  
-	})
-  });
-  map.addLayer(vector);
+  map.addControl (new ol.control.LayerSwitcher ());
