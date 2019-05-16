@@ -1,5 +1,36 @@
+/**
+ * Elementos que compõem o pop-up.
+ */
+var container = document.getElementById('popup');
+var content = document.getElementById('popup-content');
+var closer = document.getElementById('popup-closer');
+
+
+/**
+ * Cria uma sobreposição para ancorar o pop-up no mapa.
+ */
+var overlay = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+element: container,
+autoPan: true,
+autoPanAnimation: {
+	duration: 250
+}
+}));
+
+
+/**
+ * Manipulador de cliques para ocultar o pop-up.
+ * @return {boolean} Não siga o href.
+ */
+closer.onclick = function() {
+overlay.setPosition(undefined);
+closer.blur();
+return false;
+};
+
 var map = new ol.Map({
 	layers: [google, lyr_EsriSatellite_1],
+	overlays: [overlay],
 	target: 'map',
 	
 	controls: ol.control.defaults({
@@ -30,21 +61,22 @@ swipe.addEventListener('input', function() {
 	map.render();
 }, true);
 
-var vector = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: './layers/test2.geojson',
-    style: style_bairrosjti_3,
-    format: new ol.format.GeoJSON()
-    
-  })
-});
-map.addLayer(vector);
-
 map.on('singleclick', function(evt) {
 	var coordinate = evt.coordinate;
-	var hdms = toStringHDMS(toLonLat(coordinate));
+	var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
+		coordinate, 'EPSG:3857', 'EPSG:4326'));
 
-	content.innerHTML = '<p>As coordenadas do ponto que você clicou:</p><code>' + hdms +
+	content.innerHTML = '<p>Coordenada do ponto:</p><code>' + hdms +
 		'</code>';
 	overlay.setPosition(coordinate);
   });
+
+  var vector = new ol.layer.Vector({
+	source: new ol.source.Vector({
+	  url: './layers/test2.geojson',
+	  style: style_bairrosjti_3,
+	  format: new ol.format.GeoJSON()
+	  
+	})
+  });
+  map.addLayer(vector);
