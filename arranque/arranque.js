@@ -39,3 +39,5 @@ var vector = new ol.layer.Vector({
   })
 });
 map.addLayer(vector);
+
+vector.set('fieldAliases', {'IDENTIDADE': 'IDENTIDADE', });

@@ -237,18 +237,18 @@ p_lucas { color: :rgb(116, 161, 220);
 /* rodapé de atributos do mapa!----------------------------------------------*/
 .ol-attribution {
   text-align: right;
-  bottom: .05em;
+  bottom: .55em;
   right: .3em;
-  max-width: calc(90% - 1.3em);
+  max-width: calc(90% - 10.3em);
 }
 
 .ol-attribution ul {
   margin: 0;
   padding: 0.5em;
-  font-size: .5rem;
-  line-height: 1.375em;
+  font-size: .8rem;
+  line-height: 1.575em; 
   color: #000;
-  text-shadow: 0 0 2px #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.705);
 }
 .ol-attribution li {
   display: inline;
@@ -259,7 +259,7 @@ p_lucas { color: :rgb(116, 161, 220);
   content: " ";
 }
 .ol-attribution img {
-  max-height: 2em;
+  max-height: 1.5em;
   max-width: inherit;
 }
 .ol-attribution ul, .ol-attribution button {
@@ -269,10 +269,10 @@ p_lucas { color: :rgb(116, 161, 220);
   display: none;
 }
 .ol-attribution.ol-logo-only ul {
-  display: block;
+  display: grid;
 }
 .ol-attribution:not(.ol-collapsed) {
-  background: rgba(255,255,255,0.8);
+  background: rgba(32, 122, 39, 0.534);
 }
 .ol-attribution.ol-uncollapsible {
   bottom: 0;
@@ -288,14 +288,16 @@ p_lucas { color: :rgb(116, 161, 220);
   line-height: 1em;
 }
 .ol-attribution.ol-uncollapsible img {
-  margin-top: -.2em;
-  max-height: 1.6em;
+  margin-top: -22.2em;
+  max-height: 100.6em;
 }
 .ol-attribution.ol-logo-only button,
 .ol-attribution.ol-uncollapsible button {
   display: none;
 }
 
+
+/* botão aproximar e distanciar "zoom" */
 .ol-zoomslider {
   top: 4.5em;
   left: 50em;
