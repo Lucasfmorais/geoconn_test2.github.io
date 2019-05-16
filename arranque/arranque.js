@@ -40,4 +40,11 @@ var vector = new ol.layer.Vector({
 });
 map.addLayer(vector);
 
-vector.set('fieldAliases', {'IDENTIDADE': 'IDENTIDADE', });
+map.on('singleclick', function(evt) {
+	var coordinate = evt.coordinate;
+	var hdms = toStringHDMS(toLonLat(coordinate));
+
+	content.innerHTML = '<p>As coordenadas do ponto que você clicou:</p><code>' + hdms +
+		'</code>';
+	overlay.setPosition(coordinate);
+  });
